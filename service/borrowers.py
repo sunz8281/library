@@ -3,4 +3,5 @@ from cache import borrower as data
 
 def get_borrowing_books(borrower):
     books = data.get_borrowing_books(borrower)
-    return {'borrower':borrower, books:[book for book in books] }
+    book_list = [book.decode('utf-8') for book in books]
+    return {'borrower':borrower, 'books':book_list }
